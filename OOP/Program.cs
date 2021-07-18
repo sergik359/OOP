@@ -118,7 +118,6 @@ namespace OOP
 
         private static void DisplayAccount(Bank<Account> bank)
         {
-            Console.WriteLine(" id счета,      sum ");
             bank.Display();
         }
 

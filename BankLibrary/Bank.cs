@@ -83,9 +83,16 @@ namespace BankLibrary
 
         public void Display()
         {
-            foreach (T item in accounts)
+            if (accounts != null) { 
+                     Console.WriteLine("id счета,                 sum");
+                foreach (T item in accounts)
+                {
+                     Console.WriteLine($"     {item.Id}                   {item.Sum}");              
+                }
+            }
+            else
             {
-                Console.WriteLine($"{item.Id}              {item.Sum}");              
+                throw new Exception("Счетов нет");
             }
         }
 
