@@ -19,6 +19,7 @@ namespace OOP
                 Console.ForegroundColor = ConsoleColor.DarkGreen; // выводим список команд зеленым цветом
                 Console.WriteLine("1. Открыть счет \t 2. Вывести средства  \t 3. Добавить на счет");
                 Console.WriteLine("4. Закрыть счет \t 5. Пропустить день \t 6. Выйти из программы");
+                Console.WriteLine("7. Вывести все счета и суммы");
                 Console.WriteLine("Введите номер пункта:");
                 Console.ForegroundColor = color;
                 try
@@ -40,6 +41,9 @@ namespace OOP
                             CloseAccount(bank);
                             break;
                         case 5:
+                            break;
+                        case 7:
+                            DisplayAccount(bank);
                             break;
                         case 6:
                             alive = false;
@@ -111,6 +115,13 @@ namespace OOP
 
             bank.Close(id);
         }
+
+        private static void DisplayAccount(Bank<Account> bank)
+        {
+            Console.WriteLine(" id счета,      sum ");
+            bank.Display();
+        }
+
         // обработчики событий класса Account
         // обработчик открытия счета
         private static void OpenAccountHandler(object sender, AccountEventArgs e)

@@ -78,6 +78,17 @@ namespace BankLibrary
                 throw new Exception("Счет не найден");
             account.Withdraw(sum);
         }
+
+
+
+        public void Display()
+        {
+            foreach (T item in accounts)
+            {
+                Console.WriteLine($"{item.Id}              {item.Sum}");              
+            }
+        }
+
         // закрытие счета
         public void Close(int id)
         {
